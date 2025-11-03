@@ -46,7 +46,8 @@ data {
   real<lower = 0> wcmax; // prior max clearance duration 
   real<lower = 0> wcmean_p; // prior mean clearance duration
   real<lower = 0> wcsd_p; // prior sd clearance duration
-  real<lower = 0> sigma; // constant for sigma
+  real<lower = 0> sigma_prior_scale;    // Max allowable value for observation noise
+
 }
 
 transformed data {
@@ -71,6 +72,9 @@ parameters {
   real<lower=0, upper=lod> x[n_id];    // peak dct 
   real<lower=0, upper=wpmax> wp[n_id];  // proliferation duration
   real<lower=0, upper=wcmax> wc[n_id];  // clearance duration
+  
+  real<lower=0> sigma;    // Process noise during infection
+  
  
 }
 
@@ -109,6 +113,8 @@ model {
   wpsd ~ normal(wpsd_p, wpsd_p/2) T[0,];
   wcsd ~ normal(wcsd_p, wcsd_p/2) T[0,];
 
+  sigma ~ cauchy(0,sigma_prior_scale) T[0,];
+  
   // individual parameters with log normal distribution - must scale the mean/sd parameters
   
   for(i in 1:n_id){
@@ -133,7 +139,3 @@ model {
   }
   
 }
-
-
-
-
