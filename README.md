@@ -51,6 +51,9 @@ setwd("path_to/phirst-flu-shed-trans")
 Installation time: approximately 10-15 minutes to install all necessary components on a standard desktop computer. 
 
 # Demo
+
+Note: The mock data set is not representative of the cohort nor of data that follow our observed results. Thus, the results shown in the manuscript are not reflected in the regressions and figures created in this demo code. 
+
 ### Viral Shedding Model: 
 After ensuring the successful load and access of the [![mock_dataset.csv](https://github.com/msauter19/phirst-flu-shed-trans/blob/main/mock_dataset.csv)] and [![flu_ct_model.stan](https://github.com/msauter19/phirst-flu-shed-trans/blob/main/flu_ct_model.stan)] files, a demo of the viral shedding model can be run with [![shed_model_run.R](https://github.com/msauter19/phirst-flu-shed-trans/blob/main/shed_model_run.R)]. The regressions to demo the results of the viral shedding model are found in [![shed_regression.R](https://github.com/msauter19/phirst-flu-shed-trans/blob/main/shed_regression.R)].
 
