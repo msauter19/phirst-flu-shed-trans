@@ -49,7 +49,7 @@ vic_violin <- ggplot(fig1_dat, aes(x = age_cat,
 
 yam_violin <- ggplot(fig1_dat, aes(x = age_cat, 
                                    y = log10(flub_yamagata_gm))) +
-  geom_violin(fill = "#a5da76", alpha = 0.8, color = "white", linewidth = 0.3) +
+  geom_violin(fill = "#3c611b", alpha = 0.8, color = "white", linewidth = 0.3) +
   geom_boxplot(width = 0.15, outlier.shape = NA, fill = "white", alpha = 0.4) +
   scale_y_continuous(breaks = c(log10(5), log10(80), log10(1280)),
                      minor_breaks = c(1, log10(20), log10(40), log10(160), log10(320), log10(640)),
